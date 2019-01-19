@@ -22,7 +22,7 @@ class Paddle {
     if (this.constraints.isPositionViolatingConstrains(verticalPositionAfter)) {
       return new Paddle(this.constraints, this.verticalPosition)
     } else {
-      return new Paddle(this.constraints, this.verticalPosition - 1)
+      return new Paddle(this.constraints, verticalPositionAfter)
     }
   }
   getVerticalPosition() {
