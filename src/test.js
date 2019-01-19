@@ -4,8 +4,8 @@ class Constraints {
   constructor(lowerBounds) {
     this.lowerBounds = lowerBounds
   }
-  getLowerBounds() {
-    return this.lowerBounds
+  isPositionViolatingConstrains(verticalPosition) {
+    return verticalPosition <= this.lowerBounds
   }
 }
 
@@ -19,7 +19,7 @@ class Paddle {
   }
   moveDown() {
     const verticalPositionAfter = this.verticalPosition - 1
-    if (verticalPositionAfter <= this.constraints.getLowerBounds()) {
+    if (this.constraints.isPositionViolatingConstrains(verticalPositionAfter)) {
       return new Paddle(this.constraints, this.verticalPosition)
     } else {
       return new Paddle(this.constraints, this.verticalPosition - 1)
