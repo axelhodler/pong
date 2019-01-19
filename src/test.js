@@ -15,21 +15,20 @@ class Paddle {
     this.constraints = constraints
     this.verticalPosition = verticalPosition
   }
-  moveUp() {
-    const verticalPositionAfter = this.verticalPosition + 1
-    if (this.constraints.isPositionViolatingConstrains(verticalPositionAfter)) {
+  _movePositionTo(position) {
+    if (this.constraints.isPositionViolatingConstrains(position)) {
       return new Paddle(this.constraints, this.verticalPosition)
     } else {
-      return new Paddle(this.constraints, verticalPositionAfter)
+      return new Paddle(this.constraints, position)
     }
+  }
+  moveUp() {
+    const verticalPositionAfter = this.verticalPosition + 1
+    return this._movePositionTo(verticalPositionAfter)
   }
   moveDown() {
     const verticalPositionAfter = this.verticalPosition - 1
-    if (this.constraints.isPositionViolatingConstrains(verticalPositionAfter)) {
-      return new Paddle(this.constraints, this.verticalPosition)
-    } else {
-      return new Paddle(this.constraints, verticalPositionAfter)
-    }
+    return this._movePositionTo(verticalPositionAfter)
   }
   getVerticalPosition() {
     return this.verticalPosition
