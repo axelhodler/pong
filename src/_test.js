@@ -1,14 +1,5 @@
 const test = require('tape')
-
-class Constraints {
-  constructor(lowerBounds, upperBounds) {
-    this.lowerBounds = lowerBounds
-    this.upperBounds = upperBounds
-  }
-  isPositionViolatingConstrains(verticalPosition) {
-    return verticalPosition <= this.lowerBounds || verticalPosition >= this.upperBounds
-  }
-}
+import Constraints from './code'
 
 class Paddle {
   constructor(constraints, verticalPosition) {
