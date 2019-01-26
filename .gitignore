@@ -1,3 +1,4 @@
 node_modules/fsevents/lib/binding/Release/node-v51-darwin-x64/
 node_modules/
 *.swp
+.DS_Store
