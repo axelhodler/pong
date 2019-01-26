@@ -1,13 +1,6 @@
 var test = require('tape')
 import { Constraints, Paddle } from './code'
-
-class GameDisplay {
-  render(paddle) {
-    const gamespaces = [" ", " ", " "]
-    gamespaces[paddle.getVerticalPosition()] = "I"
-    return gamespaces.join("\n")
-  }
-}
+import { GameDisplay } from './display'
 
 test('renders paddle in its row - 1', assert => {
   const c = new Constraints(0, 2)
