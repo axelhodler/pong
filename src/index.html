@@ -1,0 +1,18 @@
+<html>
+    <body>
+        <h1>Pong - has to be served using sth like `http-server`</h1>
+        <script src="./code.js" type="module"></script>
+        <script src="./display.js" type="module"></script>
+
+        <script type="module">
+            import { Constraints, Paddle } from './code.js'
+            import { GameDisplay } from './display.js'
+
+            const c = new Constraints(0, 2)
+            const p = new Paddle(c, 1)
+            const game = new GameDisplay()
+            const renderedGame = game.render(p)
+            console.log(renderedGame)
+        </script>
+    </body>
+</html>
