@@ -4,7 +4,7 @@ export class Constraints {
     this.upperBounds = upperBounds
   }
   isPositionViolatingConstrains(verticalPosition) {
-    return verticalPosition <= this.lowerBounds || verticalPosition >= this.upperBounds
+    return verticalPosition < this.lowerBounds || verticalPosition > this.upperBounds
   }
 }
 

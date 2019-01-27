@@ -25,6 +25,14 @@ test('paddle is not moved out of lower constraints', assert => {
   assert.end()
 })
 
+test('paddle can be moved to upper constraints', assert => {
+  const c = new Constraints(0, 5)
+  const p = new Paddle(c, 4)
+  const movedPaddle = p.moveUp()
+  assert.equal(movedPaddle.getVerticalPosition(), 5)
+  assert.end()
+})
+
 test('paddle is not moved out of upper constraints', assert => {
   const c = new Constraints(0, 10)
   const p = new Paddle(c, 10)
