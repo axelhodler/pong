@@ -10,8 +10,8 @@
             import { GameDisplay } from './display.js'
 
             const c = new Constraints(0, 4)
-            let currentPaddle = new Paddle(c, 1)
-            const game = new GameDisplay()
+            let currentPaddle = new Paddle(c, 2)
+            const game = new GameDisplay(c)
             let renderedGame = game.render(currentPaddle)
             document.getElementById("game").innerText = renderedGame
 

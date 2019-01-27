@@ -57,3 +57,21 @@ test('moving up in two steps', assert => {
   assert.equal(renderedGame, "I\n \n ")
   assert.end()
 })
+
+test('constraints make the gamedisplay dynamic', assert => {
+  const c = new Constraints(0, 1)
+  const p = new Paddle(c, 0)
+  const game = new GameDisplay(c)
+  const renderedGame = game.render(p)
+  assert.equal(renderedGame, " \nI")
+  assert.end()
+})
+
+test('constraints make the gamedisplay dynamic - 2', assert => {
+  const c = new Constraints(0, 4)
+  const p = new Paddle(c, 3)
+  const game = new GameDisplay(c)
+  const renderedGame = game.render(p)
+  assert.equal(renderedGame, " \nI\n \n \n ")
+  assert.end()
+})

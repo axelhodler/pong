@@ -6,6 +6,9 @@ export class Constraints {
   isPositionViolatingConstrains(verticalPosition) {
     return verticalPosition < this.lowerBounds || verticalPosition > this.upperBounds
   }
+  maxMovementRange() {
+    return this.upperBounds + 1 // zero based
+  }
 }
 
 export class Paddle {
