@@ -16,7 +16,7 @@ test('renders paddle in its row - 2', assert => {
   const p = new Paddle(c, 0)
   const game = new GameDisplay()
   const renderedGame = game.render(p)
-  assert.equal(renderedGame, "I\n \n ")
+  assert.equal(renderedGame, " \n \nI")
   assert.end()
 })
 
@@ -25,7 +25,7 @@ test('renders paddle in its row - 3', assert => {
   const p = new Paddle(c, 2)
   const game = new GameDisplay()
   const renderedGame = game.render(p)
-  assert.equal(renderedGame, " \n \nI")
+  assert.equal(renderedGame, "I\n \n ")
   assert.end()
 })
 
@@ -43,6 +43,17 @@ test('renders paddle moving up', assert => {
   const p = new Paddle(c, 1)
   const game = new GameDisplay()
   const renderedGame = game.render(p.moveUp())
-  assert.equal(renderedGame, " \n \nI")
+  assert.equal(renderedGame, "I\n \n ")
+  assert.end()
+})
+
+test('moving up in two steps', assert => {
+  const c = new Constraints(0, 2)
+  let p = new Paddle(c, 0)
+  p = p.moveUp()
+  p = p.moveUp()
+  const game = new GameDisplay()
+  const renderedGame = game.render(p)
+  assert.equal(renderedGame, "I\n \n ")
   assert.end()
 })
